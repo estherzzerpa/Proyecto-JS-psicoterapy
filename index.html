@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Maven+Pro&family=Merriweather:wght@300&family=Montserrat:wght@100&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <title>Simulador Integrador</title>
+</head>
+<body>
+
+    <h3 class="mensaje_scroll">Scroll Down</h3>
+    <h2 class="text">Find your own light into yourself</h2>
+
+    <section class="animacion">
+
+        <h2 class="innerText">Find your own light into yourself</h2>
+    </section>
+
+<div class="container"  id="home">
+
+    <header class="header" >
+        <div class="menu_logo"> 
+             
+        </div>
+        <nav class="navbar">
+            <ul class="menu_opciones">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="">Terapeutas</a></li>
+                <li><a href="">Como funciona?</a></li>
+                
+                <li class="desplegable_servicio"><a href="#servicios">Servicios</a> 
+                    <ul>
+                        <li><a href="#cards">Terapia individual</a></li>
+                        <li><a href="">Terapia en pareja</a></li>
+                        <li><a href="">ChatTerapia</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Este boton que abra el modal-->
+
+        <button  id="abrir_modal_menu" class="btn_comenzar" href="">Empieza ahora</button>
+
+        <div class="container_user">
+
+            <img src="./assets/user-check-solid.svg" alt="user">
+
+            <div class="container_agenda">
+                <h2 class="agenda_name">Agenda</h2>
+            </div>
+        </div>
+
+    </header>
+
+    <article class="container_home">
+
+        <div class="text_img">
+
+            <div class="descripcion">
+                <h2 class="bienvenida">Bienvenido</h2>
+                <h1>Reconstruye tu mente, un nuevo tu, un mejor futuro desde la paz mental.<h1>
+            </div>
+
+            <picture class="illustration">
+                <img src="assets/3918491.jpg" alt="" width="400">
+            </picture>
+
+        </div>  
+
+            <!-- Este TAMBIEN que abra el modal--> 
+
+        <button id="abrir_modal_home" class="btn_comenzar">Empieza ahora</button>
+
+    </article>
+
+    <!-- SERVICIOS -->
+
+    <article class="container_servicios" id="servicios">
+
+        <div class="text_img">
+         
+            <div class="descripcion">
+                <p>Nos comprometemos con vos, en tu enriquecimiento mental</p> 
+                <h2>Conoce nuestros servicios de Psicología en línea desde cualquier parte del mundo.</h2>
+                <p>Primera sesión de conocimiento con hasta el 40% OFF</p>
+            </div>
+            <picture class="segunda_colum">
+                <h3>Terapia individual</h3>
+                <img src="assets/11098.jpg" alt="">
+                <a href="#cards"><button  class="btn_comenzar">Aplicar</button></a>
+            </picture>
+        </div>
+
+    </article>
+
+    <!-- CARD PLANES -->
+    <article id="cards" class="card_planes">
+        <div class="card_content">
+            <h3>Sesion de conocimiento</h3>
+            <h3>nivel del terapeuta</h3>
+            <select name="plan" id="plan" onchange="selectTipoPlan()">
+                <option id="profesional" value="Profesional">Selecciona el plan</option>
+                <option id="profesional" value="Profesional">Profesional</option>
+                <option id="especialista" value="Especialista">Especialista</option>
+                <option id="experto" value="Experto">Experto</option>
+            </select>
+
+            <div class="aca_descripcion">
+                <p id="descripcion">Elige el plan para ver sus beneficios</p>
+                <p id="precio"></p>
+            </div>
+            <p>Vigencia 1 semana</p>
+        </div>
+            <!-- card perfiles -->
+
+        <article class="card_perfiles">
+            
+        </article>
+    </article>
+
+<!-- REGISTRO -->
+    <dialog class="registro">
+
+        <button class="btn_cerrar">X</button>
+
+        <form class="form_signup" action="">
+
+            <h2>Registrate</h2>
+
+            <div class="inputs">
+                
+                <div class="nombre">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre_signup" placeholder="Nombre">
+                </div>
+                
+                <div class="apellido">
+                    <label for="nombre">Apellido</label>
+                    <input type="text" name="apellido" id="apellido_signup" placeholder="Apellido">
+                </div>
+                
+                <div class="edad">
+                    <label for="nombre">Edad</label>
+                    <input type="number" name="edad" id="edad_signup" placeholder="Edad">
+                </div>
+                
+                <div class="email">
+                    <label for="nombre">Email</label>
+                    <input type="email" name="email" id="email_signup" placeholder="Email">
+                </div>
+
+                <div class="password">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password_signup" placeholder="Contraseña">
+                </div>
+                
+            </div>
+            
+            <button id="submit" class="btn_comenzar" type="submit">Comenzar</button>
+
+        </form>
+
+        <form  class="form_login" action="">
+
+            <h2>Accede a tu cuenta</h2>
+
+            <div class="inputs">
+                
+                <div class="email">
+                    <label for="nombre">Email</label>
+                    <input type="email" name="email" id="email_login" placeholder="Email">
+                </div>
+
+                <div class="password">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password_login" placeholder="Contraseña">
+                </div>
+                
+            </div>
+            
+           <button class="btn_comenzar login" type="submit">Login</button></a> 
+
+        </form>
+    </dialog>
+</div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
