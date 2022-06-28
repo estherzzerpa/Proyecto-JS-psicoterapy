@@ -18,8 +18,6 @@ const emailLogin  = document.querySelector("#email_login")
 const passwordLogin  = document.querySelector("#password_login")
 const logoUser  = document.querySelector(".container_user")
 
-
-
 // BOTONES
 
 const btnMenu = document.querySelector("#abrir_modal_menu")
@@ -260,9 +258,6 @@ const perfilDisponible = (value) => {
 
             perfiles.push(imgTerapeuta)
             // console.log(perfiles.idTerapeuta)
-
-
-
             const cardObj = {
                 perfil:perfil.nombrePerfil,
                 especialidad:perfil.especialidad,
@@ -286,7 +281,6 @@ const perfilDisponible = (value) => {
 
 function elegirTerapeuta(cardP){
 
-
     agenda.push(cardP)
 
     // if(agenda){
@@ -307,9 +301,6 @@ function elegirTerapeuta(cardP){
         agendaHtml.appendChild(btnEliminar)
    })
 }
-
-
-
 
 const eliminarHTML = () => {
 
