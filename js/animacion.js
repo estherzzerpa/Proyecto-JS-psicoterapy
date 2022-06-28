@@ -12,6 +12,5 @@ export let innerText = document.querySelector(".innerText")
     section.style.clipPath = `circle(${value}px at center center)`;
     text.style.left = 100 - value / 5 + "%"
     innerText.style.left = 100 - value / 5 + "%"
-
 });
 

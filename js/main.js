@@ -63,11 +63,7 @@ const signup = (e) => {
         datosRegistro.push(users)
         console.log(users)
 
-        nombreSignup.value = ""
-        apellidoSignup.value = ""
-        edadSignup.value = ""
-        emailSignup.value = ""
-        passwordSignup.value = ""
+        formSignup.reset()
         formLogin.style.display = "flex"
         formSignup.style.display = "none"
     }
@@ -250,16 +246,10 @@ const perfilDisponible = (value) => {
             let pDescripcion = document.createElement("p");
             pDescripcion.innerText = `Hola soy ${perfil.nombrePerfil} - ${perfil.especialidad} - ${perfil.yearExperiencia}`
             let btnElegir =  document.createElement("button")
-            // btnElegir.classList.add("elegir_terapeuta")
-
-            // btnElegir.innerText = "Elegir"
 
             let idTerapeuta = `${perfil.nombrePerfil}123`
             btnElegir.innerHTML =`<button id="${idTerapeuta}" class="elegir_terapeuta">Elegir</button>
             `
-
-        
-
 
             divPerfiles.appendChild(imgTerapeuta)
             divPerfiles.appendChild(pDescripcion)
@@ -268,19 +258,23 @@ const perfilDisponible = (value) => {
             cardPerfiles.appendChild(divPerfiles)
             cardPerfiles.style.display = "flex"
 
+            perfiles.push(imgTerapeuta)
+            // console.log(perfiles.idTerapeuta)
+
+
 
             const cardObj = {
-
-                imgTerapeuta: imgTerapeuta,
                 perfil:perfil.nombrePerfil,
                 especialidad:perfil.especialidad,
-                experiencia:perfil.yearExperiencia
+                experiencia:perfil.yearExperiencia,
+                id:idTerapeuta, 
+                cantidad:1
             }
 
-            agenda.push(cardObj)
-
-            console.log(agenda)
-            // btnElegir.addEventListener("click", elegirTerapeuta)
+            btnElegir.addEventListener("click", () => {
+                    
+                elegirTerapeuta(cardObj)
+            })
         }
 
         btnCerrar.addEventListener("click", () => {
@@ -289,11 +283,30 @@ const perfilDisponible = (value) => {
     });
 }
 
-// function elegirTerapeuta(id, btnElegir, ){
+
+function elegirTerapeuta(cardP){
 
 
+    agenda.push(cardP)
 
-// }
+    // if(agenda){
+    //     cardPerfiles.style.display = "none"
+    // }
+
+   agenda.forEach(card => {
+
+        const {perfil, especialidad, experiencia, id} = card
+
+        let btnEliminar = document.createElement("button")
+        btnEliminar.innerText = "Cancelar"
+        btnEliminar.classList.add("btn_eliminar")
+
+        agendaHtml.innerText = `${perfil} ${especialidad} ${experiencia}`
+        agendaHtml.classList.add("style_agenda")
+
+        agendaHtml.appendChild(btnEliminar)
+   })
+}
 
 
 
