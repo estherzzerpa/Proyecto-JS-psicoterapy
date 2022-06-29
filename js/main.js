@@ -78,9 +78,9 @@ function elegirTerapeuta(cardP){
 
         const citaStrg = JSON.stringify(card)
 
-        const setCita = localStorage.setItem("citas", citaStrg)
+        localStorage.setItem("citas", citaStrg)
 
-        const getCita = localStorage.getItem(setCita)
+        const getCita = localStorage.getItem("citas")
 
         const parseCita = JSON.parse(getCita)
 
