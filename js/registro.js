@@ -9,7 +9,14 @@ btnAplicar.addEventListener("click", ()=>{
     
     if(!emailLogin.value && !passwordLogin.value ){
 
-        alert("Registrate para porder acceder a los planes")
+        let div = document.createElement("h2")
+        div.innerText = "Registrate para acceder a los planes"
+        div.style.color = "red"
+        columnaParaMesaje.appendChild(div)
+
+        setTimeout(() => {
+            div.style.display = "none"
+        }, 2000);
     }
     else{
         console.log("logueado")
