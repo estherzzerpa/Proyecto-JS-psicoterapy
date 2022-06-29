@@ -2,9 +2,9 @@
 
 // ANIMACION
 
-export let section = document.querySelector(".animacion");
-export let text = document.querySelector(".text")
-export let innerText = document.querySelector(".innerText")
+let section = document.querySelector(".animacion");
+let text = document.querySelector(".text")
+let innerText = document.querySelector(".innerText")
 
  window.addEventListener("scroll", function(){
 
