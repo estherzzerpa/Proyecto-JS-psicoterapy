@@ -35,7 +35,6 @@ const signup = (e) => {
         
         let jsonStorage = JSON.stringify(datosRegistro)
         localStorage.setItem("usuarios", jsonStorage)
-        console.log(jsonStorage)
 
         formSignup.reset()
         formLogin.style.display = "flex"
@@ -58,7 +57,7 @@ const login = (e) => {
 
         const get = localStorage.getItem("usuarios")
         const getParse =  JSON.parse(get)
-        
+
         getParse.find( usr => {
 
             nombre+= usr.nombre; 
