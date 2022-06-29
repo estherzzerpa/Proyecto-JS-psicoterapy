@@ -1,5 +1,5 @@
 
-// Funciones genereal
+// Funciones Para elegir el plan y el terapeuta
 
 const perfilDisponible = (value) => {
 
@@ -76,9 +76,15 @@ function elegirTerapeuta(cardP){
 
         agendaHtml.appendChild(btnEliminar)
 
-        const setCita = JSON.stringify(card)
+        const citaStrg = JSON.stringify(card)
 
-        localStorage.setItem("citas", setCita)
+        const setCita = localStorage.setItem("citas", citaStrg)
+
+        const getCita = localStorage.getItem(setCita)
+
+        const parseCita = JSON.parse(getCita)
+
+        console.log(parseCita)
     });
 }
 
