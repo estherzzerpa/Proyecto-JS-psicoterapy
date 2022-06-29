@@ -315,7 +315,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  display: none; }
 
 .aca_descripcion {
   text-align: center; }

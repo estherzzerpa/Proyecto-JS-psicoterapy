@@ -1,4 +1,12 @@
+
+const containerHome = document.querySelector(".container_home")
+const containerServicios = document.querySelector(".container_servicios")
+const cardPlanes = document.querySelector(".card_planes")
+const btnAplicar = document.querySelector("#btn_aplicar")
+
 // Card del plan
+
+const cardBody = document.querySelector(".card_planes")
 
 const cardContent = document.querySelector(".card_content")
 const acaDescripcion = document.querySelector(".aca_descripcion")

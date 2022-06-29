@@ -5,16 +5,25 @@ btnMenu.addEventListener("click", abrirModal)
 
 btnHome.addEventListener("click", abrirModal)
 
+btnAplicar.addEventListener("click", ()=>{
+    
+    if(!emailLogin.value && !passwordLogin.value ){
+
+        alert("Registrate para porder acceder a los planes")
+    }
+    else{
+        console.log("logueado")
+    }
+})
+
 btnCerrar.addEventListener("click", () => {
     registro.style.width = "0";
     registro.style.height = "0";
 });
 
-
 function abrirModal(){
     registro.style.width = "100vw";
     registro.style.height = "100vh";
-  
 }   
 
 const signup = (e) => {
@@ -75,17 +84,18 @@ const login = (e) => {
                 logoUser.style.display = "flex"
     
                 btnHome.innerHTML = `<button id ="abrir_modal_home" class="btn_comenzar"><a href="#servicios">Ver servicios</a></button>`
+
+                cardPlanes.style.display = "flex"
             }
 
             else{
                 mensajeAlerta("Los datos son incorrectos", "Error")
             }
-
         })
-
     }
     else if(!emailLogin.value || !passwordLogin.value){
         mensajeAlerta("Completa el formulario para acceder", "Error")
+
     }
 }
 

@@ -1,3 +1,5 @@
+// Se ejecuta en el index.html 
+
 const selectTipoPlan = () =>{
 
     const selectPlan = document.querySelector("#plan")
@@ -24,7 +26,7 @@ const selectTipoPlan = () =>{
         btn.addEventListener("click", () => {
             perfilDisponible(valueSelect)
         });
-    }
+}
 
 function cardPlan (){
     btn.innerText = `Elegir`

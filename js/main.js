@@ -38,8 +38,7 @@ const perfilDisponible = (value) => {
                 cantidad:1
             }
 
-            btnElegir.addEventListener("click", () => {
-                    
+            btnElegir.addEventListener("click", () => {         
                 elegirTerapeuta(cardObj)
             })
         }

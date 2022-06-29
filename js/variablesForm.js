@@ -1,8 +1,6 @@
 // Formulario de registro
 
 const registro = document.querySelector(".registro")
-const containerHome = document.querySelector(".container_home")
-const containerServicios = document.querySelector(".container_servicios")
 
 // Sign UP
 const formSignup  = document.querySelector(".form_signup")
