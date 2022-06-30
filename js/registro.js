@@ -21,7 +21,7 @@ btnAplicar.addEventListener("click", ()=>{
     else{
         console.log("logueado")
     }
-})
+});
 
 btnCerrar.addEventListener("click", () => {
     registro.style.width = "0";
@@ -31,7 +31,7 @@ btnCerrar.addEventListener("click", () => {
 function abrirModal(){
     registro.style.width = "100vw";
     registro.style.height = "100vh";
-}   
+};
 
 const signup = (e) => {
 
@@ -71,8 +71,7 @@ const login = (e) => {
 
     if(emailLogin.value && passwordLogin.value){
 
-        const get = localStorage.getItem("usuarios")
-        const getParse =  JSON.parse(get)
+        const getParse =  JSON.parse(localStorage.getItem("usuarios"))
 
         getParse.find( usr => {
 
@@ -94,15 +93,13 @@ const login = (e) => {
 
                 cardPlanes.style.display = "flex"
             }
-
             else{
                 mensajeAlerta("Los datos son incorrectos", "Error")
             }
-        })
+        });
     }
     else if(!emailLogin.value || !passwordLogin.value){
         mensajeAlerta("Completa el formulario para acceder", "Error")
-
     }
 }
 

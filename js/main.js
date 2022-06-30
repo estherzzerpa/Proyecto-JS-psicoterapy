@@ -40,7 +40,7 @@ const perfilDisponible = (value) => {
 
             btnElegir.addEventListener("click", () => {         
                 elegirTerapeuta(cardObj)
-            })
+            });
         }
 
         btnCerrar.addEventListener("click", () => {
@@ -79,9 +79,7 @@ function elegirTerapeuta(cardP){
 
         localStorage.setItem("citas", citaStrg)
 
-        const getCita = localStorage.getItem("citas")
-
-        const parseCita = JSON.parse(getCita)
+        const parseCita = JSON.parse( localStorage.getItem("citas"))
 
         console.log(parseCita)
     });

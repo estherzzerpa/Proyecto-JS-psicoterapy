@@ -20,12 +20,13 @@ const selectTipoPlan = () =>{
         descripcion.innerText =  ` ${experto.experiencia}`
         precioCard.innerText = `$${experto.precio}`
     }
-        acaDescripcion.appendChild(descripcion)
-        acaDescripcion.appendChild(precioCard)
+    
+    acaDescripcion.appendChild(descripcion)
+    acaDescripcion.appendChild(precioCard)
 
-        btn.addEventListener("click", () => {
-            perfilDisponible(valueSelect)
-        });
+    btn.addEventListener("click", () => {
+        perfilDisponible(valueSelect)
+    });
 }
 
 function cardPlan (){

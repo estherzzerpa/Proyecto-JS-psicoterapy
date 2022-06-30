@@ -9,6 +9,7 @@ function mensajeAlerta(mensaje, tipo){
     if(tipo === "Succes"){
         alert.style.color = "green"
     }
+    
     alert.style.position = "absolute"
     alert.style.top = "15%"
     registro.append(alert)
