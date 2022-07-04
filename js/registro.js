@@ -12,22 +12,22 @@ btnAplicar.addEventListener("click", () =>{
     
     if(!emailLogin.value && !passwordLogin.value ){
 
-        // let div = document.createElement("h2")
-        // div.innerText = "Registrate para acceder a los planes"
-        // div.style.color = "red"
-        // columnaParaMesaje.appendChild(div)
-      let div =  Swal.fire({
-            title: 'Sweet!',
-            text: 'Modal with a custom image.',
-            imageUrl: 'https://unsplash.it/400/200',
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
-        })
+        let div = document.createElement("h2")
+        div.innerText = "Registrate para acceder a los planes"
+        div.style.color = "red"
+        columnaParaMesaje.appendChild(div)
+        // Swal.fire({
+        //     title: 'Sweet!',
+        //     text: 'Modal with a custom image.',
+        //     imageUrl: 'https://unsplash.it/400/200',
+        //     imageWidth: 400,
+        //     imageHeight: 200,
+        //     imageAlt: 'Custom image',
+        // })
 
-        setTimeout(() => {
-            div.style.display = "none"
-        }, 2000);
+        // setTimeout(() => {
+        //     div.style.display = "none"
+        // }, 2000);
     }
     else{
         console.log("logueado")
