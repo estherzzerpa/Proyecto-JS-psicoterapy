@@ -187,7 +187,8 @@ li {
 
 .container_user {
   cursor: pointer;
-  width: 50px; }
+  width: 50px;
+  display: none; }
   .container_user .container_agenda {
     display: flex;
     flex-direction: column;

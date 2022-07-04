@@ -117,7 +117,7 @@ li{
 .container_user{
     cursor: pointer;
     width: 50px;
-    // display: none;
+    display: none;
     .container_agenda{
         display: flex;
         flex-direction: column;
@@ -152,7 +152,6 @@ li{
     }
     img{ 
         width: 40px;
-      
     }
 
     &:hover .container_agenda{
