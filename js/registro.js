@@ -6,6 +6,8 @@ btnMenu.addEventListener("click", abrirModal)
 
 btnHome.addEventListener("click", abrirModal)
 
+// Si no ha ingredaso, no puede ver los planes 
+
 btnAplicar.addEventListener("click", ()=>{
     
     if(!emailLogin.value && !passwordLogin.value ){
@@ -105,7 +107,7 @@ const login = (e) => {
             }
         });
     }
-    // si no se ha logueado no puede ver los planes
+
     else if(!emailLogin.value || !passwordLogin.value){
         mensajeAlerta("Completa el formulario para acceder", "Error")
     }
