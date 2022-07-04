@@ -187,8 +187,7 @@ li {
 
 .container_user {
   cursor: pointer;
-  width: 50px;
-  display: none; }
+  width: 50px; }
   .container_user .container_agenda {
     display: flex;
     flex-direction: column;
@@ -197,7 +196,7 @@ li {
     top: 75px;
     left: 110%;
     color: white;
-    width: 230px;
+    width: 270px;
     height: 100vh;
     background: #012b28;
     transition: .5s ease-in;
@@ -208,10 +207,11 @@ li {
       flex-direction: column;
       padding: 10px;
       background-color: white;
-      height: 60px;
+      max-height: 150px;
       margin: 5px;
       color: #000; }
       .container_user .container_agenda .style_agenda .btn_eliminar {
+        margin-top: 5px;
         background-color: #e64545;
         width: 100px;
         transition: all .5s ease-in;
@@ -229,7 +229,7 @@ li {
   .container_user img {
     width: 40px; }
   .container_user:hover .container_agenda {
-    left: 84%; }
+    left: 80%; }
 
 .registro {
   width: 0;

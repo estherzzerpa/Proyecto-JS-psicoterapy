@@ -117,7 +117,7 @@ li{
 .container_user{
     cursor: pointer;
     width: 50px;
-    display: none;
+    // display: none;
     .container_agenda{
         display: flex;
         flex-direction: column;
@@ -126,7 +126,7 @@ li{
         top: 75px;
         left: 110%;
         color: rgb(255, 255, 255);
-        width: 230px;
+        width: 270px;
         height: 100vh;
         background: rgb(1, 43, 40);
         transition: .5s ease-in;
@@ -138,26 +138,25 @@ li{
             flex-direction: column;
             padding: 10px;
             background-color: white;
-            height: 60px;
+            max-height: 150px;
             margin: 5px;
             color: #000;
 
             .btn_eliminar{
+                margin-top: 5px;
                 @include btn(rgb(230, 69, 69),100px);
                 height: 30px;
             }
         }
         
     }
-    
-
     img{ 
         width: 40px;
       
     }
 
     &:hover .container_agenda{
-        left: 84%;
+        left: 80%;
     }
   
 }

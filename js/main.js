@@ -1,8 +1,9 @@
 
-// Funciones Para elegir el plan y el terapeuta
+// Funciones Para elegir el plan y al terapeuta
+
 
 const perfilDisponible = (value) => {
-
+    // para que no se repitan el contenido del html
         eliminarHTML()
 
         perfiles.filter( perfil => {
@@ -39,7 +40,9 @@ const perfilDisponible = (value) => {
             }
 
             btnElegir.addEventListener("click", () => {         
-                elegirTerapeuta(cardObj)
+                agenda.push(cardObj)
+                elegirTerapeuta(agenda)
+                console.log(agenda)
             });
         }
 
@@ -49,11 +52,15 @@ const perfilDisponible = (value) => {
     });
 }
 
-function elegirTerapeuta(cardP){
+function elegirTerapeuta(agendaObj){
+    eliminarHTML()
+    const citaStrg = JSON.stringify(agendaObj)
 
-    agenda.push(cardP)
+    localStorage.setItem("citas", citaStrg)
 
-    if(agenda){
+    const parseCita = JSON.parse(localStorage.getItem("citas"))
+
+    if(parseCita){
 
         cardPerfiles.innerText = "A sido reservada la cita con exito, Revisa tu agenda"
 
@@ -61,29 +68,27 @@ function elegirTerapeuta(cardP){
             cardPerfiles.style.display = "none"
         }, 3000);
     }
+    pintarAgenda(parseCita);
+}
 
-    agenda.forEach(card => {
+const pintarAgenda = (cita) => { 
 
-        const {perfil, especialidad, experiencia} = card
+    let div = document.createElement("div")
+    div.innerHTML = ""
 
-        let btnEliminar = document.createElement("button")
-        btnEliminar.innerText = "Cancelar"
-        btnEliminar.classList.add("btn_eliminar")
+    cita.forEach(card => {
+        // spread operator
+        const {perfil, especialidad, experiencia, id} = card;
+        
+        div.innerHTML =  `<p class="style_agenda">Tu cita con ${perfil} - ${especialidad} - ${experiencia}</p> 
+        <button class="btn_eliminar" id="${id}">Cancelar</button>`
+        div.classList.add("style_agenda")
+        agendaHtml.appendChild(div);
 
-        agendaHtml.innerText = `${perfil} ${especialidad} ${experiencia}`
-        agendaHtml.classList.add("style_agenda")
-
-        agendaHtml.appendChild(btnEliminar)
-
-        const citaStrg = JSON.stringify(card)
-
-        localStorage.setItem("citas", citaStrg)
-
-        const parseCita = JSON.parse( localStorage.getItem("citas"))
-
-        console.log(parseCita)
     });
 }
+
+
 
 const eliminarHTML = () => {
 

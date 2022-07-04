@@ -77,7 +77,9 @@ const login = (e) => {
 
             nombre+= usr.nombre; 
 
-            if(usr.email === emailLogin.value && usr.password === passwordLogin.value){
+            // acceso condicional a un objeto
+
+            if(usr?.email === emailLogin.value && usr?.password === passwordLogin.value){
 
                 formLogin.style.display = "none";
                 registro.style.display = "none"
@@ -93,6 +95,7 @@ const login = (e) => {
 
                 cardPlanes.style.display = "flex"
             }
+            
             else{
                 mensajeAlerta("Los datos son incorrectos", "Error")
             }

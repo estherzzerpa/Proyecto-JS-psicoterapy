@@ -9,7 +9,6 @@ const btnAplicar = document.querySelector("#btn_aplicar")
 // Card del plan
 
 const cardBody = document.querySelector(".card_planes")
-
 const cardContent = document.querySelector(".card_content")
 const acaDescripcion = document.querySelector(".aca_descripcion")
 let btn = document.createElement("button")
