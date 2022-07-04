@@ -88,8 +88,6 @@ const pintarAgenda = (cita) => {
     });
 }
 
-
-
 const eliminarHTML = () => {
 
     while(cardPerfiles.firstChild){
