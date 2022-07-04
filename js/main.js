@@ -1,7 +1,7 @@
 
 // Funciones Para elegir el plan y al terapeuta
 
-
+// Al elegir el plan, se pinta en el dom los perfiles que estan asociados a ese plan
 const perfilDisponible = (value) => {
     // para que no se repitan el contenido del html
         eliminarHTML()
@@ -51,7 +51,7 @@ const perfilDisponible = (value) => {
         });
     });
 }
-
+// al elegir el terapeuta se almacena en el local storage 
 function elegirTerapeuta(agendaObj){
     eliminarHTML()
     const citaStrg = JSON.stringify(agendaObj)
@@ -60,6 +60,8 @@ function elegirTerapeuta(agendaObj){
 
     const parseCita = JSON.parse(localStorage.getItem("citas"))
 
+    // si ya esta almacenada
+    // le deja un mensaje al usuario
     if(parseCita){
 
         cardPerfiles.innerText = "A sido reservada la cita con exito, Revisa tu agenda"
@@ -70,7 +72,7 @@ function elegirTerapeuta(agendaObj){
     }
     pintarAgenda(parseCita);
 }
-
+// Aca el usuario ve su agenda 
 const pintarAgenda = (cita) => { 
 
     let div = document.createElement("div")
