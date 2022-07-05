@@ -10,29 +10,21 @@ btnHome.addEventListener("click", abrirModal)
 
 btnAplicar.addEventListener("click", () =>{
     
-    if(!emailLogin.value && !passwordLogin.value ){
+    !emailLogin.value && !passwordLogin.value ? alerta('Debes Registrarte para acceder al plan', "Error") :  console.log("logueado")
 
-        let div = document.createElement("h2")
-        div.innerText = "Registrate para acceder a los planes"
-        div.style.color = "red"
-        columnaParaMesaje.appendChild(div)
-        // Swal.fire({
-        //     title: 'Sweet!',
-        //     text: 'Modal with a custom image.',
-        //     imageUrl: 'https://unsplash.it/400/200',
-        //     imageWidth: 400,
-        //     imageHeight: 200,
-        //     imageAlt: 'Custom image',
-        // })
-
-        // setTimeout(() => {
-        //     div.style.display = "none"
-        // }, 2000);
-    }
-    else{
-        console.log("logueado")
-    }
 });
+const alerta = (mensaje, tipo) => {
+    if(tipo === "Error"){
+        Swal.fire({
+            title: 'Error!',
+            text: mensaje,
+            icon: 'error',
+            confirmButtonText: 'Ok', 
+            timer:2000, 
+            timerProgressBar:true,
+        });
+    }
+}
 
 btnCerrar.addEventListener("click", () => {
     registro.style.width = "0";
