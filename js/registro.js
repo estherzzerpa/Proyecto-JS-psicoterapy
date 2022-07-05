@@ -1,6 +1,31 @@
 
 // almaceno los datos
 const datosRegistro = []
+// Libreria Sweet alert
+const alerta = (mensaje, tipo) => {
+    if(tipo === "Error"){
+        Swal.fire({
+            title: 'Error!',
+            text: mensaje,
+            icon: 'error',
+            confirmButtonText: 'Entendido', 
+            timer:2000, 
+            timerProgressBar:true,
+            toast:true
+        });
+    }
+    else if(tipo === "Succes"){
+        Swal.fire({
+            title: 'En hora buena!',
+            text: mensaje,
+            icon: 'succes',
+            confirmButtonText: 'Ok', 
+            timer:2000, 
+            timerProgressBar:true,
+            toast:true
+        });
+    }
+}
 
 btnMenu.addEventListener("click", abrirModal)
 
@@ -13,18 +38,6 @@ btnAplicar.addEventListener("click", () =>{
     !emailLogin.value && !passwordLogin.value ? alerta('Debes Registrarte para acceder al plan', "Error") :  console.log("logueado")
 
 });
-const alerta = (mensaje, tipo) => {
-    if(tipo === "Error"){
-        Swal.fire({
-            title: 'Error!',
-            text: mensaje,
-            icon: 'error',
-            confirmButtonText: 'Ok', 
-            timer:2000, 
-            timerProgressBar:true,
-        });
-    }
-}
 
 btnCerrar.addEventListener("click", () => {
     registro.style.width = "0";
@@ -60,7 +73,7 @@ const signup = (e) => {
         formSignup.style.display = "none"
     }
     else{
-        mensajeAlerta("Completa el Registro", "Error")
+       alerta("Completa el registro", "Error")
     }
 }   
 
@@ -100,16 +113,17 @@ const login = (e) => {
                 
                 // si esta logueado puede ver los planes
                 cardPlanes.style.display = "flex"
-            }
 
+                alerta(`Bienvenido! ${nombre}, Revisa nuestros planes`, "Succes")
+            }
             else{
-                mensajeAlerta("Los datos son incorrectos", "Error")
+                alerta("Los datos son incorrectos", "Error")
             }
         });
     }
 
     else if(!emailLogin.value || !passwordLogin.value){
-        mensajeAlerta("Completa el formulario para acceder", "Error")
+        alerta("Completa el formulario para acceder", "Error")
     }
 }
 
