@@ -45,11 +45,10 @@ const generarCards = (dataFetch) => {
 
         // al elegir el terapeuta se almacena en el local storage 
 
-    btnElegir.addEventListener("click", () => {         
+        btnElegir.addEventListener("click", () => {         
         
             elegirTerapeuta(parseCita)
-    });
-
+        });
 }
 
 const  perfilDisponible = (value, dataFetch) => {
