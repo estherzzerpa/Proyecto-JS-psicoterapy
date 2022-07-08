@@ -1,12 +1,27 @@
 
+const urlPerfiles = `../js/json/perfiles.json`
+// console.log(urlPerfiles)
 // Funciones Para elegir el plan y al terapeuta
 
 // Al elegir el plan, se pinta en el dom los perfiles que estan asociados a ese plan
-const perfilDisponible = (value) => {
+
+const obtenerDatos = (urlPerfiles)=>{
+
+    fetch(urlPerfiles)
+        .then((respuesta) => respuesta.json())
+        .then((data)=>{
+         return data
+        })
+}
+
+obtenerDatos(urlPerfiles)
+
+
+const  perfilDisponible = (value) => {
     // para que no se repitan el contenido del html
         eliminarHTML()
-
-        perfiles.filter( perfil => {
+        obtenerDatos(urlPerfiles)
+        perfiles.filter(perfil => {
 
         if(value === perfil.yearExperiencia){
 
@@ -19,8 +34,8 @@ const perfilDisponible = (value) => {
             pDescripcion.innerText = `Hola soy ${perfil.nombrePerfil} - ${perfil.especialidad} - ${perfil.yearExperiencia}`
             let btnElegir =  document.createElement("button")
 
-            let idTerapeuta = `${perfil.nombrePerfil}123`
-            btnElegir.innerHTML =`<button id="${idTerapeuta}" class="elegir_terapeuta">Elegir</button>
+            divPerfiles.id = `${perfil.nombrePerfil}123`
+            btnElegir.innerHTML =`<button id="${divPerfiles.id}" class="elegir_terapeuta">Elegir</button>
             `
             divPerfiles.appendChild(imgTerapeuta)
             divPerfiles.appendChild(pDescripcion)
@@ -35,13 +50,21 @@ const perfilDisponible = (value) => {
                 perfil:perfil.nombrePerfil,
                 especialidad:perfil.especialidad,
                 experiencia:perfil.yearExperiencia,
-                id:idTerapeuta, 
+                id:divPerfiles.id, 
                 cantidad:1
             }
 
+            const citaStrg = JSON.stringify(cardObj)
+
+            localStorage.setItem("citas", citaStrg)
+
+            const parseCita = JSON.parse(localStorage.getItem("citas"))
+
+     // al elegir el terapeuta se almacena en el local storage 
+
             btnElegir.addEventListener("click", () => {         
-                agenda.push(cardObj)
-                elegirTerapeuta(agenda)
+               
+                elegirTerapeuta(parseCita)
                 console.log(agenda)
             });
         }
@@ -52,17 +75,11 @@ const perfilDisponible = (value) => {
     });
 }
 // al elegir el terapeuta se almacena en el local storage 
-function elegirTerapeuta(agendaObj){
-    eliminarHTML()
-    const citaStrg = JSON.stringify(agendaObj)
-
-    localStorage.setItem("citas", citaStrg)
-
-    const parseCita = JSON.parse(localStorage.getItem("citas"))
-
+function elegirTerapeuta(parseCita){
+    agenda.push(parseCita)
     // si ya esta almacenada
     // le deja un mensaje al usuario
-    if(parseCita){
+    if(agenda){
 
         cardPerfiles.innerText = "A sido reservada la cita con exito, Revisa tu agenda"
 
@@ -70,24 +87,60 @@ function elegirTerapeuta(agendaObj){
             cardPerfiles.style.display = "none"
         }, 3000);
     }
-    pintarAgenda(parseCita);
+    pintarAgenda(agenda);
 }
 // Aca el usuario ve su agenda 
-const pintarAgenda = (cita) => { 
+const pintarAgenda = (agendaCita) => { 
+
+    console.log(agendaCita)
 
     let div = document.createElement("div")
+    let btnEliminar = document.createElement("button")
     div.innerHTML = ""
 
-    cita.forEach(card => {
+    agendaCita.forEach(card => {
         // spread operator
         const {perfil, especialidad, experiencia, id} = card;
         
-        div.innerHTML =  `<p class="style_agenda">Tu cita con ${perfil} - ${especialidad} - ${experiencia}</p> 
-        <button class="btn_eliminar" id="${id}">Cancelar</button>`
-        div.classList.add("style_agenda")
+        div.innerHTML =  `<p class="style_agenda">Tu cita con ${perfil} - ${especialidad} - ${experiencia}</p>`
+        div.classList.add("style_agenda");
+        btnEliminar.innerText= "Cancelar"
+        btnEliminar.classList.add("btn_eliminar")
+        div.id = `${id}`
+        div.appendChild(btnEliminar)
         agendaHtml.appendChild(div);
-
     });
+
+    btnEliminar.addEventListener("click", ()=>{
+    
+    
+        let siOno = prompt("Estas seguro de eliminar? escribe = 'si' o 'no'")
+
+        if(siOno === "si"){
+            eliminarCita(div.id)
+        }
+        else if(siOno === "no"){
+            confirm("Genial sigue en pie")
+        }
+    });
+}
+
+
+
+function eliminarCita(citaDelete) {
+
+    const citaEliminada = document.getElementById(citaDelete)
+    citaEliminada.remove()
+    let pregunta;
+    const eliminarDelArray = agenda.filter( c =>{
+
+     return pregunta = c.id === citaDelete;
+ 
+    });
+
+    agenda.splice(eliminarDelArray, 1)
+
+
 }
 
 const eliminarHTML = () => {

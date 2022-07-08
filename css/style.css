@@ -187,8 +187,7 @@ li {
 
 .container_user {
   cursor: pointer;
-  width: 50px;
-  display: none; }
+  width: 50px; }
   .container_user .container_agenda {
     display: flex;
     flex-direction: column;
@@ -196,6 +195,7 @@ li {
     position: absolute;
     top: 75px;
     left: 110%;
+    text-align: center;
     color: white;
     width: 270px;
     height: 100vh;
@@ -206,13 +206,12 @@ li {
       font-size: 14px;
       display: flex;
       flex-direction: column;
-      padding: 10px;
       background-color: white;
       max-height: 150px;
       margin: 5px;
       color: #000; }
       .container_user .container_agenda .style_agenda .btn_eliminar {
-        margin-top: 5px;
+        margin: 6px 4px;
         background-color: #e64545;
         width: 100px;
         transition: all .5s ease-in;
@@ -316,8 +315,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  display: none; }
+  position: relative; }
 
 .aca_descripcion {
   text-align: center; }

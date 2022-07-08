@@ -117,7 +117,7 @@ li{
 .container_user{
     cursor: pointer;
     width: 50px;
-    display: none;
+    // display: none;
     .container_agenda{
         display: flex;
         flex-direction: column;
@@ -125,6 +125,7 @@ li{
         position: absolute;
         top: 75px;
         left: 110%;
+        text-align: center;
         color: rgb(255, 255, 255);
         width: 270px;
         height: 100vh;
@@ -136,19 +137,19 @@ li{
             font-size: 14px;
             display: flex;
             flex-direction: column;
-            padding: 10px;
+            // padding: 5px;
             background-color: white;
             max-height: 150px;
             margin: 5px;
             color: #000;
 
             .btn_eliminar{
-                margin-top: 5px;
+                margin: 6px 4px;
                 @include btn(rgb(230, 69, 69),100px);
                 height: 30px;
+
             }
         }
-        
     }
     img{ 
         width: 40px;

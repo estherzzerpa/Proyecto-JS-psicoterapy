@@ -112,7 +112,7 @@ const login = (e) => {
                 btnHome.innerHTML = `<button id ="abrir_modal_home" class="btn_comenzar"><a href="#servicios">Ver servicios</a></button>`
                 
                 // si esta logueado puede ver los planes
-                cardPlanes.style.display = "flex"
+                // cardPlanes.style.display = "flex"
 
                 alerta(`Bienvenido! ${nombre}, Revisa nuestros planes`, "Succes")
             }

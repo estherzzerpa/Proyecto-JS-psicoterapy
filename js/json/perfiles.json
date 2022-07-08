@@ -1,0 +1,40 @@
+[
+    {
+        "nombre": "Flor lee",
+        "especialidad": "Psicologo Social",
+        "tipoExperiencia": "Profesional",
+        "imagen":"avatar-profesional(2).png"
+    },
+    {
+        "nombre": "Camila Freites",
+        "especialidad": "Psicologo Clinico",
+        "tipoExperiencia": "Especialista",
+        "imagen":"camila.png"
+    },
+    {
+        "nombre": "Carolina Lugo",
+        "especialidad": "Psicologo Cognitivo",
+        "tipoExperiencia": "Especialista",
+        "imagen":"avatar-profesional(2).png"
+    },
+    {
+        "nombre": "Emiliano Marot",
+        "especialidad": "Psicologo Clinico",
+        "tipoExperiencia": "Profesional",
+        "imagen":"avatar-pedro.png"
+    },
+    {
+        "nombre": "Esther Zerpa",
+        "especialidad": "Psicologo Social",
+        "tipoExperiencia": "Experto",
+        "imagen":"avatar-profesional(2).png"
+    },
+    {
+        "nombre": "Jeremias Salazar",
+        "especialidad": "Psicologo Social",
+        "tipoExperiencia": "Experto",
+        "imagen":"avatar-pedro.png"
+    }
+]
+
+
