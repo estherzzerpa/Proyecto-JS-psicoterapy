@@ -1,4 +1,3 @@
-
 const urlPerfiles = `../js/json/perfiles.json`
 // console.log(urlPerfiles)
 // Funciones Para elegir el plan y al terapeuta
@@ -16,12 +15,11 @@ const obtenerDatos = (urlPerfiles)=>{
 
 obtenerDatos(urlPerfiles)
 
+const perfilDisponible = (value) => {
 
-const  perfilDisponible = (value) => {
-    // para que no se repitan el contenido del html
         eliminarHTML()
-        obtenerDatos(urlPerfiles)
-        perfiles.filter(perfil => {
+
+        perfiles.filter( perfil => {
 
         if(value === perfil.yearExperiencia){
 
@@ -34,8 +32,8 @@ const  perfilDisponible = (value) => {
             pDescripcion.innerText = `Hola soy ${perfil.nombrePerfil} - ${perfil.especialidad} - ${perfil.yearExperiencia}`
             let btnElegir =  document.createElement("button")
 
-            divPerfiles.id = `${perfil.nombrePerfil}123`
-            btnElegir.innerHTML =`<button id="${divPerfiles.id}" class="elegir_terapeuta">Elegir</button>
+            let idTerapeuta = `${perfil.nombrePerfil}123`
+            btnElegir.innerHTML =`<button id="${idTerapeuta}" class="elegir_terapeuta">Elegir</button>
             `
             divPerfiles.appendChild(imgTerapeuta)
             divPerfiles.appendChild(pDescripcion)
@@ -50,23 +48,14 @@ const  perfilDisponible = (value) => {
                 perfil:perfil.nombrePerfil,
                 especialidad:perfil.especialidad,
                 experiencia:perfil.yearExperiencia,
-                id:divPerfiles.id, 
+                id:idTerapeuta, 
                 cantidad:1
             }
 
-            const citaStrg = JSON.stringify(cardObj)
-
-            localStorage.setItem("citas", citaStrg)
-
-            const parseCita = JSON.parse(localStorage.getItem("citas"))
-
-     // al elegir el terapeuta se almacena en el local storage 
-
-            btnElegir.addEventListener("click", () => {         
-               
-                elegirTerapeuta(parseCita)
-                console.log(agenda)
-            });
+            btnElegir.addEventListener("click", () => {
+                    
+                elegirTerapeuta(cardObj)
+            })
         }
 
         btnCerrar.addEventListener("click", () => {
@@ -74,11 +63,11 @@ const  perfilDisponible = (value) => {
         });
     });
 }
-// al elegir el terapeuta se almacena en el local storage 
-function elegirTerapeuta(parseCita){
-    agenda.push(parseCita)
-    // si ya esta almacenada
-    // le deja un mensaje al usuario
+
+function elegirTerapeuta(cardP){
+
+    agenda.push(cardP)
+
     if(agenda){
 
         cardPerfiles.innerText = "A sido reservada la cita con exito, Revisa tu agenda"
@@ -87,60 +76,24 @@ function elegirTerapeuta(parseCita){
             cardPerfiles.style.display = "none"
         }, 3000);
     }
-    pintarAgenda(agenda);
-}
-// Aca el usuario ve su agenda 
-const pintarAgenda = (agendaCita) => { 
 
-    console.log(agendaCita)
+    agenda.forEach(card => {
 
-    let div = document.createElement("div")
-    let btnEliminar = document.createElement("button")
-    div.innerHTML = ""
+        const {perfil, especialidad, experiencia} = card
 
-    agendaCita.forEach(card => {
-        // spread operator
-        const {perfil, especialidad, experiencia, id} = card;
-        
-        div.innerHTML =  `<p class="style_agenda">Tu cita con ${perfil} - ${especialidad} - ${experiencia}</p>`
-        div.classList.add("style_agenda");
-        btnEliminar.innerText= "Cancelar"
+        let btnEliminar = document.createElement("button")
+        btnEliminar.innerText = "Cancelar"
         btnEliminar.classList.add("btn_eliminar")
-        div.id = `${id}`
-        div.appendChild(btnEliminar)
-        agendaHtml.appendChild(div);
+
+        agendaHtml.innerText = `${perfil} ${especialidad} ${experiencia}`
+        agendaHtml.classList.add("style_agenda")
+
+        agendaHtml.appendChild(btnEliminar)
+
+        const setCita = JSON.stringify(card)
+
+        localStorage.setItem("citas", setCita)
     });
-
-    btnEliminar.addEventListener("click", ()=>{
-    
-    
-        let siOno = prompt("Estas seguro de eliminar? escribe = 'si' o 'no'")
-
-        if(siOno === "si"){
-            eliminarCita(div.id)
-        }
-        else if(siOno === "no"){
-            confirm("Genial sigue en pie")
-        }
-    });
-}
-
-
-
-function eliminarCita(citaDelete) {
-
-    const citaEliminada = document.getElementById(citaDelete)
-    citaEliminada.remove()
-    let pregunta;
-    const eliminarDelArray = agenda.filter( c =>{
-
-     return pregunta = c.id === citaDelete;
- 
-    });
-
-    agenda.splice(eliminarDelArray, 1)
-
-
 }
 
 const eliminarHTML = () => {
