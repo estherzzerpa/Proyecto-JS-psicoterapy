@@ -1,58 +1,59 @@
 
 const urlPerfiles = `../js/json/perfiles.json`
-// Funciones Para elegir el plan y al terapeuta
 
-// Al elegir el plan, se pinta en el dom los perfiles que estan asociados a ese plan
+// funcion que pinta las cards por cada terapeuta iterado
 
-// tendere que hacer dentro de cada then el codigo para mostrarlo en pantalla
 const generarCards = (dataFetch) => {
-    eliminarHTML()
+    
     const {nombre, especialidad, tipoExperiencia, imagen} = dataFetch
+    // eliminarHTML()
 
-    let divPerfiles = document.createElement("div")
-    divPerfiles.classList.add("container_perfiles")
-    let imgTerapeuta = document.createElement("div")
+    let divPerfiles = document.createElement("div");
+    // cardPerfiles.innerHTML =""
+    divPerfiles.classList.add("container_perfiles");
 
+    let imgTerapeuta = document.createElement("div");
     imgTerapeuta.innerHTML = `<img src="assets/${imagen}">`
+
     let pDescripcion = document.createElement("p");
     pDescripcion.innerText = `Hola soy ${nombre} - ${especialidad} - ${tipoExperiencia}`
-    let btnElegir =  document.createElement("button")
 
+    let btnElegir =  document.createElement("button");
     divPerfiles.id = `${nombre}123`
-    btnElegir.innerHTML =`<button id="${divPerfiles.id}" class="elegir_terapeuta">Elegir</button>
-    `
-    divPerfiles.appendChild(imgTerapeuta)
-    divPerfiles.appendChild(pDescripcion)
-    divPerfiles.appendChild(btnElegir)
-    cardPerfiles.appendChild(btnCerrar)
-    cardPerfiles.appendChild(divPerfiles)
-    cardPerfiles.style.display = "flex"
+    btnElegir.innerHTML =`<button id="${divPerfiles.id}" class="elegir_terapeuta">Elegir</button>`
 
-    // objeto donde guardo los datos para el html
+    divPerfiles.appendChild(imgTerapeuta);
+    divPerfiles.appendChild(pDescripcion);
+    divPerfiles.appendChild(btnElegir);
+    cardPerfiles.appendChild(btnCerrar);
+    cardPerfiles.appendChild(divPerfiles);
+    cardPerfiles.style.display = "flex"
+    
+
+    // objeto donde guardo los datos 
 
     const cardObj = {
         perfil:nombre,
         especialidad:especialidad,
         experiencia:tipoExperiencia,
         id:divPerfiles.id
-    }
+    };
 
-    const citaStrg = JSON.stringify(cardObj)
+    const citaStrg = JSON.stringify(cardObj);
 
-    localStorage.setItem("citas", citaStrg)
+    localStorage.setItem("citas", citaStrg);
 
     const parseCita = JSON.parse(localStorage.getItem("citas"))
 
-        // al elegir el terapeuta se almacena en el local storage 
+    // al elegir el terapeuta se almacena en el local storage 
 
-        btnElegir.addEventListener("click", () => {         
-        
-            elegirTerapeuta(parseCita)
-        });
+    btnElegir.addEventListener("click", () => {         
+        elegirTerapeuta(parseCita);
+    });
 }
 
 const  perfilDisponible = (value, dataFetch) => {
-
+   
     value === dataFetch.tipoExperiencia && generarCards(dataFetch)
 
     btnCerrar.addEventListener("click", () => {
@@ -60,14 +61,16 @@ const  perfilDisponible = (value, dataFetch) => {
     });
 }
 
-// al elegir el terapeuta se almacena en el local storage 
+// al elegir se almacena al local storage
+
 function elegirTerapeuta(parseCita){
+
     agenda.push(parseCita)
     // si ya esta almacenada
     // le deja un mensaje al usuario
     if(agenda){
-
-        cardPerfiles.innerText = "A sido reservada la cita con exito, Revisa tu agenda"
+      
+        cardPerfiles.innerText = "La cita a sido reservada con exito, Revisa tu agenda"
 
         setTimeout(() => {
             cardPerfiles.style.display = "none"
@@ -84,7 +87,6 @@ const pintarAgenda = (agendaCita) => {
     let div = document.createElement("div")
     let btnEliminar = document.createElement("button")
     div.innerHTML = ""
-
     agendaCita.forEach(card => {
         // spread operator
         const {perfil, especialidad, experiencia, id} = card;
@@ -98,21 +100,16 @@ const pintarAgenda = (agendaCita) => {
         agendaHtml.appendChild(div);
     });
 
+    // preguntar si esta seguro de eliminar o no 
+
     btnEliminar.addEventListener("click", ()=>{
     
+        let siOno = prompt("Estas seguro de cancelar tu cita? escribe = 'si' o 'no'")
+
+        siOno === "si" ? eliminarCita(div.id) || siOno === "no" : confirm("Genial sigue en pie")
     
-        let siOno = prompt("Estas seguro de eliminar? escribe = 'si' o 'no'")
-
-        if(siOno === "si"){
-            eliminarCita(div.id)
-        }
-        else if(siOno === "no"){
-            confirm("Genial sigue en pie")
-        }
     });
-}
-
-
+};
 
 function eliminarCita(citaDelete) {
 
@@ -125,8 +122,6 @@ function eliminarCita(citaDelete) {
     });
 
     agenda.splice(eliminarDelArray, 1)
-
-
 }
 
 const eliminarHTML = () => {

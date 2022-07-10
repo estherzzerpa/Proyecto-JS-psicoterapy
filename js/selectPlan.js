@@ -24,22 +24,28 @@ const selectTipoPlan = () =>{
     acaDescripcion.appendChild(descripcion)
     acaDescripcion.appendChild(precioCard)
 
-    
-
-
     btn.addEventListener("click", () => {
 
         const obtenerDatos = (urlPerfiles)=>{
+            // let contenidoAmostrar;
 
             fetch(urlPerfiles)
-                .then((respuesta) => respuesta.json())
-                .then((data)=>{
-                    data.forEach( datosDelfetch => {
-        
-                       perfilDisponible(valueSelect, datosDelfetch )
+            .then((respuesta) => respuesta.json())
+            .then((data)=>{
+                data.forEach( datosDelfetch => {
                     
-                    });
+                  return  perfilDisponible(valueSelect, datosDelfetch)
+                
                 });
+                // cardPerfiles.innerHTML = contenidoAmostrar
+            })
+
+            .catch((err)=>{
+
+                alerta("No se encontro el resultado", "Error")
+                return err
+            })
+
         }
 
       obtenerDatos(urlPerfiles)
