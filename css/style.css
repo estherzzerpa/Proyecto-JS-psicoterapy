@@ -187,7 +187,8 @@ li {
 
 .container_user {
   cursor: pointer;
-  width: 50px; }
+  width: 50px;
+  display: none; }
   .container_user .container_agenda {
     display: flex;
     flex-direction: column;
@@ -315,7 +316,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  display: none; }
 
 .aca_descripcion {
   text-align: center; }

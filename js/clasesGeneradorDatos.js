@@ -1,15 +1,5 @@
 const plan = []
-const perfiles = []
 const agenda = []
-
-class Perfil {
-    constructor(nombrePerfil, especialidad, yearExperiencia, imagen){
-        this.nombrePerfil = nombrePerfil
-        this.especialidad = especialidad
-        this.yearExperiencia = yearExperiencia
-        this.imagen = imagen
-    }
-}
 
 class Planes {
     constructor(tipoPLan, precio, experiencia){
@@ -27,11 +17,6 @@ const experto = new Planes("Experto", 10.99, "Psicolog@ con más de 10 años de 
 
 plan.push(profesional, especialista, experto);
 
-// Perfiles 
 
-perfiles.push(new Perfil("Camila Zapata", "Psicologia Clinica", "Especialista", "camila.png"))
-perfiles.push(new Perfil("Camila Ramos", "Psicologia Clinica", "Especialista", "avatar-profesional(2).png"))
-perfiles.push(new Perfil("Pedro Salazar", "Psicologia Cognitiva", "Experto", "avatar-pedro.png"))
-perfiles.push(new Perfil("Esther Zerpa", "Psicologia Social", "Profesional","camila.png"))
-perfiles.push(new Perfil("Esther Lugo", "Psicologia Clinico", "Profesional", "avatar-profesional(2).png"))
+
 
