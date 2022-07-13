@@ -1,5 +1,5 @@
 
-const urlPerfiles = `../perfiles.json`
+const urlPerfiles = `perfiles.json`
 
 let valueSelect = "";
 
