@@ -1,6 +1,13 @@
 
 const urlPerfiles = `../js/json/perfiles.json`
 
+const eliminarHTML = () => {
+    
+    while (cardPerfiles.children.length > 0){
+        cardPerfiles.removeChild(cardPerfiles.firstChild)
+    }
+}
+
 // funcion que pinta las cards por cada terapeuta iterado
 
 const generarCards = (dataFetch) => {
@@ -9,7 +16,6 @@ const generarCards = (dataFetch) => {
     // eliminarHTML()
 
     let divPerfiles = document.createElement("div");
-    // cardPerfiles.innerHTML =""
     divPerfiles.classList.add("container_perfiles");
 
     let imgTerapeuta = document.createElement("div");
@@ -57,8 +63,9 @@ const  perfilDisponible = (value, dataFetch) => {
     value === dataFetch.tipoExperiencia && generarCards(dataFetch)
 
     btnCerrar.addEventListener("click", () => {
+        eliminarHTML();        
         cardPerfiles.style.display = "none"
-    });
+    })
 }
 
 // al elegir se almacena al local storage
@@ -66,23 +73,30 @@ const  perfilDisponible = (value, dataFetch) => {
 function elegirTerapeuta(parseCita){
 
     agenda.push(parseCita)
+
     // si ya esta almacenada
     // le deja un mensaje al usuario
+
     if(agenda){
-      
+        console.log(agenda.length )
+
         cardPerfiles.innerText = "La cita a sido reservada con exito, Revisa tu agenda"
 
+        console.log(cardPerfiles)
+
         setTimeout(() => {
+            cardPerfiles.innerText = ""
             cardPerfiles.style.display = "none"
-        }, 3000);
+        }, 2000);
     }
+
     pintarAgenda(agenda);
 }
 
 // Aca el usuario ve su agenda 
 const pintarAgenda = (agendaCita) => { 
 
-    console.log(agendaCita)
+    eliminarHTML()
 
     let div = document.createElement("div")
     let btnEliminar = document.createElement("button")
@@ -104,9 +118,9 @@ const pintarAgenda = (agendaCita) => {
 
     btnEliminar.addEventListener("click", ()=>{
     
-        let siOno = prompt("Estas seguro de cancelar tu cita? escribe = 'si' o 'no'")
+        let confirmDelete = prompt("Estas seguro de cancelar tu cita? escribe = 'si' o 'no'")
 
-        siOno === "si" ? eliminarCita(div.id) || siOno === "no" : confirm("Genial sigue en pie")
+        confirmDelete === "si" ? eliminarCita(div.id) || confirmDelete === "no" : confirm("Genial sigue en pie")
     
     });
 };
@@ -123,19 +137,3 @@ function eliminarCita(citaDelete) {
 
     agenda.splice(eliminarDelArray, 1)
 }
-
-const eliminarHTML = () => {
-
-    while(cardPerfiles.firstChild){
-
-       cardPerfiles.removeChild(cardPerfiles.firstChild)
-    }
-}
-
-
-
-
-
-
-
-

@@ -117,7 +117,7 @@ li{
 .container_user{
     cursor: pointer;
     width: 50px;
-    // display: none;
+    display: none;
     .container_agenda{
         display: flex;
         flex-direction: column;
@@ -137,12 +137,10 @@ li{
             font-size: 14px;
             display: flex;
             flex-direction: column;
-            // padding: 5px;
             background-color: white;
             max-height: 150px;
             margin: 5px;
             color: #000;
-
             .btn_eliminar{
                 margin: 6px 4px;
                 @include btn(rgb(230, 69, 69),100px);
