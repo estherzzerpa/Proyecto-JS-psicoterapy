@@ -31,8 +31,6 @@ const selectTipoPlan = () =>{
 btn.addEventListener("click", () => {
 
     const obtenerDatos = (urlPerfiles)=>{
-        // let contenidoAmostrar;
-
         fetch(urlPerfiles)
         .then((respuesta) => respuesta.json())
         .then((data)=>{
@@ -40,14 +38,13 @@ btn.addEventListener("click", () => {
               return  perfilDisponible(valueSelect, datosDelfetch)
             
             });
-            // cardPerfiles.innerHTML = contenidoAmostrar
         })
 
         .catch((err)=>{
 
             alerta("No se encontro el resultado", "Error")
             return err
-        })
+        });
 
     }
 
