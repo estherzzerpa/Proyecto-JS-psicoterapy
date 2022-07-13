@@ -123,13 +123,15 @@ const pintarAgenda = (agendaCita) => {
     });
 };
 
-        agendaHtml.appendChild(btnEliminar)
+function eliminarCita(citaDelete) {
 
     const citaEliminada = document.getElementById(citaDelete)
     citaEliminada.remove()
     const eliminarDelArray = agenda.filter( c =>{
 
-        localStorage.setItem("citas", setCita)
+     return pregunta = c.id === citaDelete;
+ 
     });
 
     agenda.splice(eliminarDelArray, 1)
+}
