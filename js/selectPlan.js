@@ -1,5 +1,5 @@
 
-const urlPerfiles = `../json/perfiles.json`
+const urlPerfiles = `../js/json/perfiles.json`
 
 let valueSelect = "";
 
@@ -37,7 +37,6 @@ btn.addEventListener("click", () => {
         .then((respuesta) => respuesta.json())
         .then((data)=>{
             data.forEach( datosDelfetch => {
-               console.log(valueSelect);
               return  perfilDisponible(valueSelect, datosDelfetch)
             
             });
