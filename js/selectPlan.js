@@ -1,6 +1,9 @@
-// Se ejecuta en el index.html 
+
+const urlPerfiles = `../js/json/perfiles.json`
 
 let valueSelect = "";
+
+// Se ejecuta en el index.html 
 
 const selectTipoPlan = () =>{
 

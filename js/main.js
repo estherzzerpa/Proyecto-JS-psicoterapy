@@ -1,5 +1,3 @@
-const urlPerfiles = `/js/json/perfiles.json`
-
 const eliminarHTML = () => {
     
     while (cardPerfiles.children.length > 0){
