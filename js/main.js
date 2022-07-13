@@ -1,4 +1,4 @@
-const urlPerfiles = `../js/json/perfiles.json`
+const urlPerfiles = `./js/json/perfiles.json`
 
 const eliminarHTML = () => {
     
