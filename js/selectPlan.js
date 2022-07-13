@@ -1,5 +1,5 @@
 
-const urlPerfiles = `desafio-DOM-event/js/json/perfiles.json`
+const urlPerfiles = `json/perfiles.json`
 
 let valueSelect = "";
 
