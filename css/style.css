@@ -500,6 +500,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #0d4876;
   color: #0000; }
   .cards img {
     width: 90px; }
