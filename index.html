@@ -6,46 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Maven+Pro&family=Merriweather:wght@300&family=Montserrat:wght@100&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Simulador Integrador</title>
+    <title>Tu Terapia</title>
 </head>
 <body>
-  
 
+<div class="container-global">
     
+</div>
 
-    <h3 class="mensaje_scroll">Scroll Down</h3>
-    <h2 class="text">Find your own light into yourself</h2>
+    <!-- ANIMACION -->
 
-    <section class="animacion">
+<h3 class="mensaje_scroll">Scroll Down</h3>
+<h2 class="text">Find your own light into yourself</h2>
 
-        <h2 class="innerText">Find your own light into yourself</h2>
-    </section>
+<section class="animacion">
+    <h2 class="innerText">Find your own light into yourself</h2>
+</section>
+
+
+    <!-- MENU -->
 
 <div class="container"  id="home">
 
     <header class="header" >
-
-        <div class="menu_logo"> 
-             
-        </div>
+        <div class="menu_logo"></div>
         <nav class="navbar">
             <ul class="menu_opciones">
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="">Terapeutas</a></li>
-                <li><a href="">Como funciona?</a></li>
+                <li><a href="./terapeutas.html">Terapeutas</a></li>
+                <li><a href="#">Como funciona?</a></li>
                 
                 <li class="desplegable_servicio"><a href="#servicios">Servicios</a> 
                     <ul>
-                        <li><a href="#cards">Terapia individual</a></li>
-                        <li><a href="">Terapia en pareja</a></li>
-                        <li><a href="">ChatTerapia</a></li>
+                        <li><a href="#servicios">Terapia individual</a></li>
+                        <li><a href="#servicios">Terapia en pareja</a></li>
+                        <li><a href="#servicios">ChatTerapia</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
+
         <!-- Este boton que abra el modal-->
 
         <button  id="abrir_modal_menu" class="btn_comenzar" href="">Empieza ahora</button>
@@ -69,6 +72,7 @@
             <div class="descripcion">
                 <h2 class="bienvenida">Bienvenido</h2>
                 <h1>Reconstruye tu mente, un nuevo tu, un mejor futuro desde la paz mental.<h1>
+                <h2>Echale un vistazo a nuestros <a href="./terapeutas.html" target="_blank"><strong> terapeutas!</strong></a> Tenemos excelentes planes para vos!</h2>
             </div>
 
             <picture class="illustration">
@@ -76,8 +80,6 @@
             </picture>
 
         </div>  
-
-            <!-- Este TAMBIEN que abra el modal--> 
 
         <button id="abrir_modal_home" class="btn_comenzar">Empieza ahora</button>
 
@@ -90,14 +92,54 @@
         <div class="text_img">
          
             <div class="descripcion">
+                <h3>Tipo de terapias</h3>
                 <p>Nos comprometemos con vos, en tu enriquecimiento mental</p> 
                 <h2>Conoce nuestros servicios de Psicología en línea desde cualquier parte del mundo.</h2>
                 <p>Primera sesión de conocimiento con hasta el 40% OFF</p>
             </div>
-            <picture class="segunda_colum">
-                <h3>Terapia individual</h3>
-                <img src="assets/11098.jpg" alt="">
-                <a href="#cards"><button id="btn_aplicar"  class="btn_comenzar">Aplicar</button></a>
+            
+            <picture class="segunda_colum ">
+
+                <div id="slider-container  " class="slider">
+
+                    <div class="sinElbtn slider-slides">
+                        
+                        <div id="slide-0" class="slider-slide active">
+                            <div>
+                                <h3>Terapia individual</h3> 
+                                <img src="assets/11098.jpg" alt="" >
+                            </div>                
+                        </div>
+
+                        <div id="slide-1" class="slider-slide">
+                            <div>
+                                <h3>Terapia en pareja</h3>
+                                <img src="assets/4242521.jpg" alt="" >
+                            </div>
+                        </div>
+
+                        <div id="slide-2" class="slider-slide">
+                            <div>
+                                <h3>ChatTerapia</h3>
+                                <img src="assets/Wavy_Ppl-04_Single-11.jpg" alt="" >
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                    <a href="#cards"><button id="btn_aplicar"  class="btn_comenzar">Aplicar</button></a>
+
+                </div>
+
+                <div id="arrow-wrapper">
+                    <p id="arrow-prev" class="slider-arrow center_y">
+                        &#10094;
+                    </p>
+            
+                    <p id="arrow-next" class="slider-arrow center_y">
+                        &#10095;
+                    </p>
+                </div>
             </picture>
         </div>
 
@@ -105,6 +147,7 @@
 
     <!-- CARD PLANES -->
     <article id="cards" class="card_planes">
+        <h2>Todos los planes</h2>
         <div class="card_content">
             <h3>Sesion de conocimiento</h3>
             <h3>nivel del terapeuta</h3>
@@ -121,12 +164,34 @@
             </div>
             <p>Vigencia 1 semana</p>
         </div>
+
             <!-- card perfiles -->
 
         <article class="card_perfiles">
-
         </article>
     </article>
+
+    <!-- TERAPEUTAS -->
+
+    <div class="container-main">
+        <div class="container-cards">
+        <!-- quise hacer un filtrado con las cards pero no me salio y no consegui a nadie que me ayudara  -->
+           <form class="Filtrar">
+                <h2>Nivel del terapeuta</h2>
+                <select name="select-terapeutas" id="select-terapeutas">
+                    <option id="All" value="Profesional">Todos</option>
+                    <option id="profesional" value="Profesional">Profesional</option>
+                    <option id="especialista" value="Especialista">Especialista</option>
+                    <option id="experto" value="Experto">Experto</option>
+                </select>
+            </form>
+        
+            <!-- ACA INTEGRO LAS CARDS DE TODOS LOS TERAPEUTAS DINAMICAMENTE  -->
+             <section class="terapeutas" >                        
+
+            </section>
+        </div>
+    </div>
 
 <!-- REGISTRO -->
  
@@ -172,7 +237,7 @@
 
         </form>
 
-        <form  class="form_login" action="">
+        <form  class="form_login" action="" method="POST">
 
             <h2>Accede a tu cuenta</h2>
 
@@ -195,13 +260,14 @@
         </form>
     </dialog>
 </div>
-
-<script src="js/variablesHTML.js"></script>
-<script src="js/variablesForm.js"></script>
-<script src="js/clasesGeneradorDatos.js"></script>
-<script src="js/selectPlan.js"></script>
-<script src="js/animacion.js"></script>
-<script src="js/registro.js"></script>
-<script src="js/main.js"></script>
+<script src="src/animacion.js"></script>
+<script src="src/variablesHTML.js"></script>
+<script src="src/variablesForm.js"></script>
+<script src="src/slider-servicios.js"></script>
+<script src="src/clasesGeneradorDatos.js"></script>
+<script src="src/selectPlan.js"></script>
+<script src="src/registro.js"></script>
+<script src="src/main.js"></script>
+<script src="./src/terapeutas.js"></script>
 </body>
 </html>

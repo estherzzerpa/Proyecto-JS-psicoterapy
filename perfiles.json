@@ -1,39 +1,80 @@
 [
     {
         "nombre": "Flor lee",
-        "especialidad": "Psicologo Social",
+        "id":1,
+        "especialidad": "Psicologo Clinica",
         "tipoExperiencia": "Profesional",
-        "imagen":"avatar-profesional(2).png"
+        "imagen":"avatar-profesional(2).png",
+        "telefono":"1137957701", 
+        "descripcion":"Especialista en Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
     },
     {
         "nombre": "Camila Freites",
+        "id":2,
         "especialidad": "Psicologo Clinico",
         "tipoExperiencia": "Especialista",
-        "imagen":"camila.png"
+        "imagen":"camila.png",
+        "telefono":"1137957701",
+        "descripcion":"Especialista en Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+
     },
     {
         "nombre": "Carolina Lugo",
+        "id":3,
         "especialidad": "Psicologo Cognitivo",
         "tipoExperiencia": "Especialista",
-        "imagen":"avatar-profesional(2).png"
+        "imagen":"female_woman1.png",
+        "telefono":"1137957701",
+        "descripcion":"Especialista en Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+
     },
     {
         "nombre": "Emiliano Marot",
+        "id":4,
         "especialidad": "Psicologo Clinico",
         "tipoExperiencia": "Profesional",
-        "imagen":"avatar-pedro.png"
+        "imagen":"avatar-pedro.png",
+        "telefono":"1137957701",
+        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+
     },
     {
         "nombre": "Esther Zerpa",
-        "especialidad": "Psicologo Social",
+        "id":5,
+        "especialidad": "Psicologo Clinica",
         "tipoExperiencia": "Experto",
-        "imagen":"avatar-profesional(2).png"
+        "imagen":"woman2.png",
+        "telefono":"1137957701",
+        "descripcion":"Magíster en Psicología, con énfasis en Psicología clínica. Especialista en el tratamiento de dificultades emocionales y afectivas. 9 años de experiencia en psicoterapia con adultos, jóvenes y familias. Enfoque de trabajo Terapia Narrativa."
+        
     },
     {
         "nombre": "Jeremias Salazar",
+        "id":6,
         "especialidad": "Psicologo Social",
         "tipoExperiencia": "Experto",
-        "imagen":"avatar-pedro.png"
+        "imagen":"avatar-experto.png",
+        "telefono":"1137957701",
+        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+
+    },
+    {
+        "nombre": "Rodrigo Armesilla",
+        "id":7,
+        "especialidad": "Cognitivo Conductual",
+        "tipoExperiencia": "Profesional",
+        "imagen":"man1.png",
+        "telefono":"1137957701",
+        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+    },
+    {
+        "nombre": "Roberto Martinez",
+        "id":8,
+        "especialidad": "Crecimiento Personal",
+        "tipoExperiencia": "Especialista",
+        "imagen":"man2.png",
+        "telefono":"1137957701",
+        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
     }
 ]
 

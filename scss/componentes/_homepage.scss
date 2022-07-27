@@ -19,11 +19,12 @@
     position:sticky;
     top: 0%;
     height: 35px;
-    background: rgb(1, 43, 40);
+    background-color: rgba(19, 85, 119, 0.424);
+    filter: blur(6);
+    backdrop-filter: blur(6px);
     padding: 20px;
     transition: .5s ease;
     z-index: 9999;
-    // position: relative
 }
 
 .btn_comenzar{
@@ -45,11 +46,10 @@
     text-align: center;
     cursor: pointer;
     font-weight: lighter;
-    /* box-shadow: 2px 2px 10px rgb(94, 197, 222); */
 }
 
 li{
-    margin: 20px 0;
+    margin: 16px 0;
     font-weight: lighter;
     font-size: 20px;
     width: 170px;
@@ -64,15 +64,16 @@ li{
 
 .desplegable_servicio{
     overflow: hidden;
-    transition:all .5s ease-in; 
     ul{
         list-style: none;
         position: absolute;
         width: 170px;
         display: none;
         height: 0;
-        background: rgb(1, 43, 40);
-        border-radius: 10px;
+        background-color: rgba(19, 85, 119, 0.424);
+        filter: blur(6);
+        backdrop-filter: blur(6px);
+        border-radius: 5px;
     }
     &:hover ul{
         display: block;
@@ -127,18 +128,21 @@ li{
         left: 110%;
         text-align: center;
         color: rgb(255, 255, 255);
-        width: 270px;
+        width: 320px;
         height: 100vh;
-        background: rgb(1, 43, 40);
+        background-color: rgba(19, 85, 119, 0.424);
+        filter: blur(6);
+        backdrop-filter: blur(6px);
         transition: .5s ease-in;
         box-shadow: 2px 2px 10px rgba(52, 166, 183, 0.502);
     
         .style_agenda{
+            width: 300px;
             font-size: 14px;
             display: flex;
             flex-direction: column;
             background-color: white;
-            max-height: 150px;
+            max-height: 190px;
             margin: 5px;
             color: #000;
             .btn_eliminar{
@@ -147,6 +151,8 @@ li{
                 height: 30px;
 
             }
+
+            
         }
     }
     img{ 
@@ -154,7 +160,20 @@ li{
     }
 
     &:hover .container_agenda{
-        left: 80%;
+        left: 75%;
     }
   
+}
+
+
+.space{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnConfirm {
+    margin: 6px 4px;
+    @include btn(rgb(52, 216, 109), 100px);
+    height: 30px;
+
 }

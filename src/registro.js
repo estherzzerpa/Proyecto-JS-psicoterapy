@@ -28,21 +28,22 @@ const alerta = (mensaje, tipo) => {
             toast:true
         });
     }
+    else if(tipo === "warning"){
+        Swal.fire({
+            title: 'Faltan datos',
+            text: mensaje,
+            icon: 'warning',
+            confirmButtonText: 'Ok', 
+            timer:2000, 
+            timerProgressBar:true,
+            toast:true
+        });
+    }
 }
 
 btnMenu.addEventListener("click", abrirModal)
 
 btnHome.addEventListener("click", abrirModal)
-
-// Si no ha ingredaso, no puede ver los planes 
-
-btnAplicar.addEventListener("click", () =>{
-    console.log(emailLogin.value)
-    console.log(passwordLogin.value)
-    
-    !emailLogin.value && !passwordLogin.value ? alerta('Debes Registrarte para acceder al plan', "Error") :  console.log("logueado")
-
-});
 
 btnCerrar.addEventListener("click", () => {
     registro.style.width = "0";
@@ -118,6 +119,7 @@ const login = (e) => {
                 
                 // si esta logueado puede ver los planes
                 cardPlanes.style.display = "flex"
+
 
                 alerta(`Bienvenido! ${nombre}, Revisa nuestros planes`, "Succes")
             }

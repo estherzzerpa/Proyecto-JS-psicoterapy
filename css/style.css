@@ -52,7 +52,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  clip-path: circle(0 at center center); }
+  clip-path: circle(0 at center center);
+  overflow: hidden; }
 
 .text {
   font-family: sans-serif;
@@ -98,7 +99,9 @@ body {
   position: sticky;
   top: 0%;
   height: 35px;
-  background: #012b28;
+  background-color: rgba(19, 85, 119, 0.424);
+  filter: blur(6);
+  backdrop-filter: blur(6px);
   padding: 20px;
   transition: .5s ease;
   z-index: 9999; }
@@ -127,11 +130,10 @@ body {
   display: flex;
   text-align: center;
   cursor: pointer;
-  font-weight: lighter;
-  /* box-shadow: 2px 2px 10px rgb(94, 197, 222); */ }
+  font-weight: lighter; }
 
 li {
-  margin: 20px 0;
+  margin: 16px 0;
   font-weight: lighter;
   font-size: 20px;
   width: 170px;
@@ -142,16 +144,17 @@ li {
       color: rgba(88, 219, 239, 0.974); }
 
 .desplegable_servicio {
-  overflow: hidden;
-  transition: all .5s ease-in; }
+  overflow: hidden; }
   .desplegable_servicio ul {
     list-style: none;
     position: absolute;
     width: 170px;
     display: none;
     height: 0;
-    background: #012b28;
-    border-radius: 10px; }
+    background-color: rgba(19, 85, 119, 0.424);
+    filter: blur(6);
+    backdrop-filter: blur(6px);
+    border-radius: 5px; }
   .desplegable_servicio:hover ul {
     display: block;
     height: 150px; }
@@ -198,17 +201,20 @@ li {
     left: 110%;
     text-align: center;
     color: white;
-    width: 270px;
+    width: 320px;
     height: 100vh;
-    background: #012b28;
+    background-color: rgba(19, 85, 119, 0.424);
+    filter: blur(6);
+    backdrop-filter: blur(6px);
     transition: .5s ease-in;
     box-shadow: 2px 2px 10px rgba(52, 166, 183, 0.502); }
     .container_user .container_agenda .style_agenda {
+      width: 300px;
       font-size: 14px;
       display: flex;
       flex-direction: column;
       background-color: white;
-      max-height: 150px;
+      max-height: 190px;
       margin: 5px;
       color: #000; }
       .container_user .container_agenda .style_agenda .btn_eliminar {
@@ -230,14 +236,35 @@ li {
   .container_user img {
     width: 40px; }
   .container_user:hover .container_agenda {
-    left: 80%; }
+    left: 75%; }
+
+.space {
+  display: flex;
+  justify-content: space-evenly; }
+
+.btnConfirm {
+  margin: 6px 4px;
+  background-color: #34d86d;
+  width: 100px;
+  transition: all .5s ease-in;
+  height: 44px;
+  border-radius: 5px;
+  display: flex;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  height: 30px; }
 
 .registro {
   width: 0;
   height: 0;
-  background-color: rgba(230, 219, 219, 0.1);
-  filter: blur(6);
-  backdrop-filter: blur(6px);
+  background-color: rgba(122, 108, 229, 0.1);
+  filter: blur(8);
+  backdrop-filter: blur(8px);
   position: fixed;
   margin: auto;
   top: 75px;
@@ -292,32 +319,81 @@ li {
   padding-left: 10px; }
 
 .container_servicios {
-  margin: 30px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; }
+  padding-top: 100px;
+  overflow: hidden; }
+  .container_servicios .descripcion h3 {
+    font-size: 30px; }
 
-.segunda_colum img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%; }
-
-.segunda_colum {
+.slider {
+  position: relative;
+  width: 400px;
+  margin: 1rem auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; }
+
+.slider-slides {
+  position: relative;
   height: 400px;
-  justify-content: space-between; }
+  width: 100%; }
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  height: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s ease; }
+  .slider-slide h3 {
+    padding-bottom: 10px; }
+  .slider-slide img {
+    border-radius: 50%;
+    height: 320px;
+    width: 320px; }
+
+.active {
+  opacity: 1;
+  visibility: visible; }
+
+.segunda_colum {
+  position: relative; }
+  .segunda_colum #arrow-wrapper {
+    width: 100%;
+    height: 100%; }
+    .segunda_colum #arrow-wrapper #arrow-prev {
+      position: absolute;
+      top: 35%;
+      left: 0;
+      cursor: pointer;
+      z-index: 2; }
+    .segunda_colum #arrow-wrapper #arrow-next {
+      position: absolute;
+      top: 35%;
+      right: 0;
+      cursor: pointer; }
+    .segunda_colum #arrow-wrapper .slider-arrow {
+      font-size: 35px;
+      transition: .5s ease; }
+      .segunda_colum #arrow-wrapper .slider-arrow:hover {
+        color: #0b91d4; }
 
 .card_planes {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  display: none; }
+  display: none;
+  transition-delay: 0.2s; }
+  .card_planes h2 {
+    margin: 16px; }
 
 .aca_descripcion {
   text-align: center; }
@@ -343,11 +419,13 @@ li {
   align-items: center;
   position: absolute;
   display: none;
-  background: #012b28;
+  background-color: rgba(19, 85, 119, 0.424);
+  filter: blur(6);
+  backdrop-filter: blur(6px);
   box-shadow: 20px 20px 20px 30px rgba(26, 165, 186, 0.502);
   border-radius: 10px;
-  width: 60%;
-  height: 50%; }
+  width: 65%;
+  height: 90%; }
   .card_perfiles img {
     width: 100px; }
   .card_perfiles .container_perfiles {
@@ -397,3 +475,44 @@ li {
     height: 30px;
     color: black;
     border-radius: 50%; }
+
+.container-cards {
+  width: 100%;
+  background: url(../assets/bgbluewave.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 100%;
+  padding: 80px; }
+
+.terapeutas {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%; }
+
+.cards {
+  margin: 30px;
+  max-width: 300px;
+  height: 340px;
+  max-height: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0000; }
+  .cards img {
+    width: 90px; }
+  .cards p {
+    color: #000;
+    padding: 5px;
+    text-align: center;
+    font-weight: 600; }
+  .cards button {
+    margin-top: 1rem; }
+  .cards .img_name {
+    display: flex;
+    align-items: center; }
+
+.filter {
+  display: none; }
