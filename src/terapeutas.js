@@ -45,10 +45,10 @@ const generarCard = (item)=>{
                 <img src="./assets/${imagen}">
                 <p class="title"> ${nombre}, ${tipoExperiencia}</p>
             </div>
-                <p class="${tipoExperiencia}"> ${especialidad}</p>
-                <p> ${descripcion}</p>
-                <button class="btn_comenzar conectar" id="${id}">Contactar</button>
-           
+            <p class="${tipoExperiencia}"> ${especialidad}</p>
+            <p> ${descripcion}</p>
+            <button class="btn_comenzar conectar" id="${id}">Contactar</button>
+        
         `
     divContainer.innerHTML = div
     terapeutasHtml.appendChild(divContainer)

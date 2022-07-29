@@ -125,8 +125,6 @@ const pintarAgenda = (agendaCita) => {
 
     div.appendChild(btnEliminar)
     agendaHtml.appendChild(div);
-    console.log(agendaHtml)
-
 
     // preguntar si esta seguro de eliminar o no 
 
