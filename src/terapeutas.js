@@ -1,6 +1,8 @@
 const url = `perfiles.json`
 
 const terapeutasHtml = document.querySelector(".terapeutas");
+const select = document.getElementById("select-terapeutas")
+const clase = document.getElementsByClassName("cards")
 
 let terapeutasArr = []
 
@@ -8,6 +10,7 @@ window.addEventListener("DOMContentLoaded", async ()=>{
     const data = await obtenerPerfiles(url)
     terapeutasArr = data
     printCards(terapeutasArr)
+    filtrarCards(clase)
 })
 
 const obtenerPerfiles = async (url) => {
@@ -19,12 +22,15 @@ const obtenerPerfiles = async (url) => {
         alert("Error no se encontro la URL")
     }
 }   
-
+// itera por cada dato obtenido e imprime las cards
 const printCards = (datos)=>{
    
-    datos.forEach( items => generarCard(items) );
-
+    datos.forEach( items =>{ 
+        generarCard(items) 
+     
+    });  
 }
+// estructura de las cards
 
 const generarCard = (item)=>{
 
@@ -37,11 +43,12 @@ const generarCard = (item)=>{
     div += `
             <div class="img_name">
                 <img src="./assets/${imagen}">
-                <p> ${nombre}, ${tipoExperiencia}</p>
+                <p class="title"> ${nombre}, ${tipoExperiencia}</p>
             </div>
-            <p class="${tipoExperiencia}"> ${especialidad}</p>
-            <p> ${descripcion}</p>
-            <button class="btn_comenzar conectar" id="${id}">Contactar</button>
+                <p class="${tipoExperiencia}"> ${especialidad}</p>
+                <p> ${descripcion}</p>
+                <button class="btn_comenzar conectar" id="${id}">Contactar</button>
+           
         `
     divContainer.innerHTML = div
     terapeutasHtml.appendChild(divContainer)
@@ -51,11 +58,18 @@ const generarCard = (item)=>{
 
             noLogin("Para contactarte, antes elige el plan")
         }
-    })
+    });
 }
+// filtrado de las cards
+const filtrarCards = (selector) =>{
 
+    select.addEventListener("change", (e)=>{
 
-
-
-
-
+            for(let i = 0; i < selector.length; i++){
+                selector[i].textContent.includes(`${e.target.value}`) || e.target.value=="All"
+                ? selector[i].classList.remove("filter")
+                : selector[i].classList.add("filter")
+                console.log(selector[i].textContent.includes(`${e.target.value}`));
+            };
+    });
+}

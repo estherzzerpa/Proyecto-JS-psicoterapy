@@ -1,32 +1,33 @@
 
 const urlPerfiles = `perfiles.json`
 
-let valueSelect = "";
-
-// Se ejecuta en el index.html 
+const selectPlan = document.querySelector("#plan")
+const valueSelect= selectPlan.value
 
 const selectTipoPlan = () =>{
 
-    const selectPlan = document.querySelector("#plan")
-    
-    valueSelect = selectPlan.value
-       
-    if(valueSelect === "Profesional"){
-        descripcion.innerText =  ` ${profesional.experiencia}`
-        precioCard.innerText = `$${profesional.precio}`
-    }
-    else if(valueSelect === "Especialista"){
-        descripcion.innerText =  ` ${especialista.experiencia}`
-        precioCard.innerText = `$${especialista.precio}`
-    }    
-    else{
-        descripcion.innerText =  ` ${experto.experiencia}`
-        precioCard.innerText = `$${experto.precio}`
-    }
-    
-    acaDescripcion.appendChild(descripcion)
-    acaDescripcion.appendChild(precioCard)    
+    selectPlan.addEventListener("change", (e) => {
+
+        if(e.target.value === "Profesional"){
+            descripcion.innerText =  ` ${profesional.experiencia}`
+            precioCard.innerText = `$${profesional.precio}`
+        }
+        else if(e.target.value === "Especialista"){
+            descripcion.innerText =  ` ${especialista.experiencia}`
+            precioCard.innerText = `$${especialista.precio}`
+        } 
+        else{
+            descripcion.innerText =  ` ${experto.experiencia}`
+            precioCard.innerText = `$${experto.precio}`
+        }
+        
+        acaDescripcion.appendChild(descripcion)
+        acaDescripcion.appendChild(precioCard)    
+
+    })
 }
+
+selectTipoPlan()
 
 btn.addEventListener("click", () => {
 
@@ -45,7 +46,6 @@ btn.addEventListener("click", () => {
             alerta("No se encontro el resultado", "Error")
             return err
         });
-
     }
 
   obtenerDatos(urlPerfiles)

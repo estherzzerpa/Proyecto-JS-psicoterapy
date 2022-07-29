@@ -151,8 +151,8 @@
         <div class="card_content">
             <h3>Sesion de conocimiento</h3>
             <h3>nivel del terapeuta</h3>
-            <select name="plan" id="plan" onchange="selectTipoPlan()">
-                <option id="profesional" value="Profesional">Selecciona el plan</option>
+            <select name="plan" id="plan">
+                <option id="profesional" value="main">Selecciona el plan</option>
                 <option id="profesional" value="Profesional">Profesional</option>
                 <option id="especialista" value="Especialista">Especialista</option>
                 <option id="experto" value="Experto">Experto</option>
@@ -175,11 +175,10 @@
 
     <div class="container-main" id="terapeutas">
         <div class="container-cards">
-        <!-- quise hacer un filtrado con las cards pero no me salio y no consegui a nadie que me ayudara  -->
            <form class="Filtrar">
                 <h2>Nivel del terapeuta</h2>
                 <select name="select-terapeutas" id="select-terapeutas">
-                    <option id="All" value="Profesional">Todos</option>
+                    <option id="All" value="All">Todos</option>
                     <option id="profesional" value="Profesional">Profesional</option>
                     <option id="especialista" value="Especialista">Especialista</option>
                     <option id="experto" value="Experto">Experto</option>
@@ -187,7 +186,7 @@
             </form>
         
             <!-- ACA INTEGRO LAS CARDS DE TODOS LOS TERAPEUTAS DINAMICAMENTE  -->
-             <section class="terapeutas" >                        
+             <section class="terapeutas" >  
 
             </section>
         </div>

@@ -10,7 +10,7 @@ const eliminarHTML = () => {
 
 const generarCards = (dataFetch) => {
     
-    const {nombre, especialidad, tipoExperiencia, imagen, telefono, id} = dataFetch
+    const {nombre, especialidad, tipoExperiencia, imagen, id} = dataFetch
 
     let divPerfiles = document.createElement("div");
     divPerfiles.classList.add("container_perfiles");
@@ -99,8 +99,6 @@ const  elegirTerapeuta  = (parseCita)=>{
     }
 
     pintarAgenda(agenda);
-    console.log(agenda)
-
 }
 
 // Aca el usuario ve su agenda 
@@ -138,14 +136,14 @@ const pintarAgenda = (agendaCita) => {
         alert.classList.add("style_agenda")
 
         alert.innerHTML =  `<h3> Estas seguro de cancelar tu cita?</h3>
-                                <div class="space">
-                                    <button class="btnConfirm btn-si">Si</button>
-                                    <button class="btn_eliminar btn-no">No</button>
-                                </div>
+                            <div class="space">
+                                <button class="btnConfirm btn-si">Si</button>
+                                <button class="btn_eliminar btn-no">No</button>
+                            </div>
                             `
         agendaHtml.appendChild(alert)
 
-        agendaHtml.addEventListener("click",(e)=>{
+        agendaHtml.addEventListener("click",(e) =>{
 
             div.style.display = "none"
             
@@ -153,7 +151,7 @@ const pintarAgenda = (agendaCita) => {
                 alert.style.display = "none"
                 eliminarCita(div.id);
             }
-            else if(e.target.classList.contains("btn-no")) {
+            else if(e.target.classList.contains("btn-no")){
                 alert.style.display = "none"
                 div.style.display = "flex"
             }

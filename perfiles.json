@@ -6,7 +6,7 @@
         "tipoExperiencia": "Profesional",
         "imagen":"avatar-profesional(2).png",
         "telefono":"1137957701", 
-        "descripcion":"Especialista en Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
     },
     {
         "nombre": "Camila Freites",
@@ -15,7 +15,7 @@
         "tipoExperiencia": "Especialista",
         "imagen":"camila.png",
         "telefono":"1137957701",
-        "descripcion":"Especialista en Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
 
     },
     {
@@ -25,17 +25,17 @@
         "tipoExperiencia": "Especialista",
         "imagen":"female_woman1.png",
         "telefono":"1137957701",
-        "descripcion":"Especialista en Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Psicología Clínica, con experiencia de 6 años en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
 
     },
     {
-        "nombre": "Emiliano Marot",
+        "nombre": "Diego Ruzzarin",
         "id":4,
         "especialidad": "Psicologo Clinico",
         "tipoExperiencia": "Profesional",
         "imagen":"avatar-pedro.png",
         "telefono":"1137957701",
-        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
 
     },
     {
@@ -45,8 +45,7 @@
         "tipoExperiencia": "Experto",
         "imagen":"woman2.png",
         "telefono":"1137957701",
-        "descripcion":"Magíster en Psicología, con énfasis en Psicología clínica. Especialista en el tratamiento de dificultades emocionales y afectivas. 9 años de experiencia en psicoterapia con adultos, jóvenes y familias. Enfoque de trabajo Terapia Narrativa."
-        
+        "descripcion":"Magíster en Psicología, con énfasis en Psicología clínica. Tratamiento de dificultades emocionales y afectivas. 9 años de experiencia en psicoterapia con adultos, jóvenes y familias. Enfoque de trabajo Terapia Narrativa."
     },
     {
         "nombre": "Jeremias Salazar",
@@ -55,17 +54,17 @@
         "tipoExperiencia": "Experto",
         "imagen":"avatar-experto.png",
         "telefono":"1137957701",
-        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
 
     },
     {
-        "nombre": "Rodrigo Armesilla",
+        "nombre": "Carlos Armesilla",
         "id":7,
         "especialidad": "Cognitivo Conductual",
         "tipoExperiencia": "Profesional",
         "imagen":"man1.png",
         "telefono":"1137957701",
-        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
     },
     {
         "nombre": "Roberto Martinez",
@@ -74,7 +73,7 @@
         "tipoExperiencia": "Especialista",
         "imagen":"man2.png",
         "telefono":"1137957701",
-        "descripcion":"Especialista en Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
+        "descripcion":"Evaluación clínica y tratamiento de trastornos emocionales y Afectivos. 4 años de experiencia en psicoterapia con niños, adolescentes, adultos, parejas y familias. Enfoque de trabajo Cognitivo Conductual."
     }
 ]
 

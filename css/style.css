@@ -509,6 +509,8 @@ li {
     padding: 5px;
     text-align: center;
     font-weight: 600; }
+  .cards figcaption {
+    color: #000; }
   .cards button {
     margin-top: 1rem; }
   .cards .img_name {
