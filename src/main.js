@@ -53,8 +53,7 @@ const  perfilDisponible = (value, dataFetch) => {
     btnCerrar.addEventListener("click", () => {
         eliminarHTML();        
         cardPerfiles.style.display = "none"
-    })
-
+    });
 }
 
 // Eliminar cita 
@@ -74,8 +73,6 @@ const eliminarCita = (citaDelete) => {
  
     });
     agenda.splice(eliminarDelArray, 1)
-
-    console.log(agenda)
 
 }
 
