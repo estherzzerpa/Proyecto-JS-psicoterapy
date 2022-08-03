@@ -427,8 +427,8 @@ li {
   backdrop-filter: blur(6px);
   box-shadow: 20px 20px 20px 30px rgba(26, 165, 186, 0.502);
   border-radius: 10px;
-  width: 65%;
-  height: 90%; }
+  width: 75%;
+  height: 60%; }
   .card_perfiles img {
     width: 100px; }
   .card_perfiles .container_perfiles {
@@ -654,4 +654,7 @@ li {
     flex-direction: column;
     align-items: center; }
   .descripcion {
-    margin-bottom: 70px; } }
+    margin-bottom: 70px; }
+  .card_perfiles {
+    display: flex;
+    flex-direction: column; } }
