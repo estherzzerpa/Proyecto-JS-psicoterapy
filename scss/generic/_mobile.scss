@@ -153,14 +153,20 @@
         margin-bottom: 70px;
     }
     
-    .card_perfiles{
-        display: flex;
-        flex-direction: column;
-    }
 
     .footer{
         height: 40%;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .container_user{
+        // width: 500px;
+
+
+        // .container_uder
+        &:hover .container_agenda{
+            left: 40%;
+        }
     }
 }

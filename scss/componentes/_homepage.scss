@@ -10,6 +10,9 @@
     height: 100%;
     position: relative;
 }
+body{
+    overflow-x: hidden;
+}
 
 .header{
     display: flex;

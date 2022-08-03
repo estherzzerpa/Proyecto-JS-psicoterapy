@@ -92,6 +92,9 @@ body {
   height: 100%;
   position: relative; }
 
+body {
+  overflow-x: hidden; }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -416,6 +419,7 @@ li {
 .card_perfiles {
   transition: .5s ease;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -653,10 +657,9 @@ li {
     align-items: center; }
   .descripcion {
     margin-bottom: 70px; }
-  .card_perfiles {
-    display: flex;
-    flex-direction: column; }
   .footer {
     height: 40%;
     display: flex;
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  .container_user:hover .container_agenda {
+    left: 40%; } }
