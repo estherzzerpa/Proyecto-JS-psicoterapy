@@ -9,7 +9,6 @@
     color: #fff;
     height: 100%;
     position: relative;
-    overflow-x: hidden;
 }
 
 .header{
@@ -87,7 +86,6 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex;
 }
 
 .text_img{
@@ -149,10 +147,7 @@ li{
                 margin: 6px 4px;
                 @include btn(rgb(230, 69, 69),100px);
                 height: 30px;
-
             }
-
-            
         }
     }
     img{ 
@@ -164,7 +159,6 @@ li{
     }
   
 }
-
 
 .space{
     display: flex;

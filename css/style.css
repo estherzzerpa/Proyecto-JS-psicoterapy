@@ -90,8 +90,7 @@ body {
   background-size: cover;
   color: #fff;
   height: 100%;
-  position: relative;
-  overflow-x: hidden; }
+  position: relative; }
 
 .header {
   display: flex;
@@ -165,8 +164,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  display: flex; }
+  align-items: center; }
 
 .text_img {
   display: flex;
