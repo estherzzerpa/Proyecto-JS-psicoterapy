@@ -5,19 +5,20 @@
     background-size: cover;
     color: #fff;
     height: 100%;
-    padding: 80px;
+   
 }
 
 .terapeutas{
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
+    width: 80%;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 .cards{
-    margin: 30px;
+    margin: 30px 10px;
     max-width: 300px;
     height: 340px;
     max-height: 400px;
@@ -47,9 +48,19 @@
         display: flex;
         align-items: center;
     }
+
+   
+}
+
+.Filtrar{
+    padding: 50px 0 0 50px;
+    h2{
+        margin-bottom: 20px;
+    }
 }
 
 .filter{
     display: none;
 }
+
 
