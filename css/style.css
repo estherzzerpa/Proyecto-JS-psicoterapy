@@ -655,4 +655,8 @@ li {
     margin-bottom: 70px; }
   .card_perfiles {
     display: flex;
-    flex-direction: column; } }
+    flex-direction: column; }
+  .footer {
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap; } }
