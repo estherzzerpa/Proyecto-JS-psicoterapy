@@ -426,28 +426,29 @@ li {
   align-items: center;
   position: absolute;
   display: none;
-  background-color: rgba(19, 85, 119, 0.424);
+  background-color: rgba(22, 114, 159, 0.576);
   filter: blur(6);
   backdrop-filter: blur(6px);
   box-shadow: 20px 20px 20px 30px rgba(26, 165, 186, 0.502);
   border-radius: 10px;
   width: 75%;
-  height: 65%; }
+  height: 95%; }
   .card_perfiles img {
     width: 100px; }
   .card_perfiles .container_perfiles {
-    border-radius: 10px;
+    border-radius: 50%;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 600;
     background-color: white;
-    width: 300px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
     flex-direction: column;
     text-align: center;
-    margin: 30px; }
+    margin: 30px;
+    box-shadow: 2px 2px 17px 5px #3facf0; }
     .card_perfiles .container_perfiles .elegir_terapeuta {
       margin-top: 10px;
       background-color: #06b2c5;
@@ -465,6 +466,8 @@ li {
       font-weight: bold;
       box-shadow: 2px 2px 10px rgba(52, 166, 183, 0.502);
       height: 25px; }
+    .card_perfiles .container_perfiles:hover {
+      box-shadow: 2px 2px 17px 5px rgba(157, 225, 243, 0.76); }
   .card_perfiles .btn_cerrar {
     background-color: white;
     width: 30px;
