@@ -665,4 +665,8 @@ li {
   .container_user {
     margin-right: 30px; }
     .container_user:hover .container_agenda {
-      left: 51%; } }
+      left: 61%; } }
+
+@media screen and (max-width: 580px) {
+  .container_user:hover .container_agenda {
+    left: 35%; } }

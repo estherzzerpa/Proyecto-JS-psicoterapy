@@ -167,7 +167,17 @@
 
         // .container_uder
         &:hover .container_agenda{
-            left: 51%;
+            left: 61%;
+        }
+    }
+}
+
+@media screen and (max-width:580px){
+    .container_user{
+      
+        // .container_uder
+        &:hover .container_agenda{
+            left: 35%;
         }
     }
 }
