@@ -389,14 +389,15 @@ li {
         color: #0b91d4; }
 
 .card_planes {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   display: none;
-  transition-delay: 0.2s; }
+  transition-delay: 0.2s;
+  margin: 300px 0; }
   .card_planes h2 {
     margin: 16px; }
 
@@ -431,7 +432,7 @@ li {
   box-shadow: 20px 20px 20px 30px rgba(26, 165, 186, 0.502);
   border-radius: 10px;
   width: 75%;
-  height: 60%; }
+  height: 65%; }
   .card_perfiles img {
     width: 100px; }
   .card_perfiles .container_perfiles {
@@ -669,4 +670,6 @@ li {
 
 @media screen and (max-width: 580px) {
   .container_user:hover .container_agenda {
-    left: 35%; } }
+    left: 35%; }
+  .card_perfiles {
+    margin-bottom: 300px; } }

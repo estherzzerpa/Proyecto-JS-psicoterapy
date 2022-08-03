@@ -170,6 +170,7 @@
             left: 61%;
         }
     }
+
 }
 
 @media screen and (max-width:580px){
@@ -179,5 +180,9 @@
         &:hover .container_agenda{
             left: 35%;
         }
+    }
+
+    .card_perfiles{
+        margin-bottom: 300px;
     }
 }
