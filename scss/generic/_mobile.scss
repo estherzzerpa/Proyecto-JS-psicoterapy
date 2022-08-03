@@ -93,9 +93,9 @@
         width: 0;
         height: 0;
         background-color: rgba(22, 160, 175, 0.7);
-        border-radius: 10px;
         filter: blur(8);
         backdrop-filter: blur(8px);
+        border-radius: 8px;
         position: fixed;
         margin: auto;
         bottom: 75px;
